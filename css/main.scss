@@ -1,0 +1,173 @@
+/* font */
+html {
+  font-size: 6.25%;
+}
+body {
+  &.none-scroll {
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+
+/* intro */
+.intro {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  
+  &.empty {
+    display: none;
+  }
+  
+  .intro-word-wrap {
+    position: absolute;
+    overflow: hidden;
+
+    .intro-word-list {
+      transform: translateY(100%);
+      display: inline-block;
+      font-size: 30rem;
+      color: #000;
+      transition: 1s ease;
+      
+      &.active {
+        transform: translateY(0);
+      }
+      &.upper {
+        transform: translateY(-100%);
+      }
+    }
+  }
+
+  .intro-slide-wrap{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    
+    &.empty {
+      display: none;
+    }
+    .intro-slide {
+      width: 20%;
+      height: 100%;
+      background-color: #e5e7eb;
+  }}
+}
+
+section {
+  position: relative;
+  z-index: 1;
+
+  .inner {
+    width: 95vw;
+    .section-border {
+      width: 100%;
+      height: 1rem;
+      background-color: #e5e7eb;
+    }
+  }
+
+  // 비주얼
+  .visual {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: #000;
+    // background: url(../image/img-visual.jpg) no-repeat 0 / cover;
+    overflow: hidden;
+    .visual-txt-wrap {
+      transform: translateY(200rem);
+      display: flex;
+      justify-content: center;
+      &.right {
+        position: absolute;
+        bottom: 30rem;
+        right: 30rem;
+        .visual-txt {
+          font-size: 0;
+        }
+      }
+      .visual-txt {
+        display: inline-block;
+        // font-size: 300rem;
+        font-size: 500rem;
+        font-family: "Boldonse", system-ui;
+        font-weight: 700;
+        color: #e5e7eb;
+        -webkit-text-stroke-color: #e5e7eb;
+        -webkit-text-stroke-width: 1rem;
+        opacity: 0;
+        transform: translateY(30rem);
+        mix-blend-mode: difference;
+  
+        &:first-child {
+          padding-left: 20rem;
+        }
+      }
+    }
+    .rotate-img {
+      position: absolute;
+      bottom: 40%;
+      left: 45%;
+      opacity: 0;
+
+      &.active {
+        opacity: 1;
+        transform: rotate(180deg);
+        transition: all .6s;
+      }
+    }
+    .img-box {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 478rem;
+      height: 478rem;
+      z-index: 1;
+      background: url(../image/img-moon.png) no-repeat 0 / cover;
+      // mix-blend-mode: difference;
+    }
+  }
+
+  .work-section {
+    padding-top: 300rem;
+    width: 100%;
+    background-color: #e2e1df;
+  }
+
+  .txt-test {
+    position: absolute;
+    bottom: 300rem;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "Boldonse", system-ui;
+    font-weight: 400;
+    p {
+      position: relative;
+      font-size: 160rem;
+      line-height: 1;
+      color: #e5e7eb;
+    }
+    &.front {
+      z-index: 2;
+      p {
+        -webkit-text-stroke: 1rem #e5e7eb;
+        color: transparent;
+      }
+    }
+  }
+}
+
+.boldonse-regular {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}

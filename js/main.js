@@ -3,7 +3,7 @@ $(document).ready(function () {
   // smooth scroll
   const lenis = new Lenis()
   lenis.on('scroll', (e) => {
-    console.log(e)
+    // console.log(e)
   })
 
   function raf(time) {
@@ -38,7 +38,9 @@ $(document).ready(function () {
     ease: "quart.inOut",
     onComplete() {
       $("body").removeClass("none-scroll");
-      // $(".rotate-img").addClass("active");
+      gsap.to(".rotate-img", {
+        opacity: 1,
+      });
     }
   });
   tl.to(".visual-txt", {
@@ -56,7 +58,7 @@ $(document).ready(function () {
     }
   }, "+=.5");
 
-  gsap.to(".img-box", {
+  gsap.to(".rotate-img", {
     scrollTrigger: {
       trigger: "html, body",
       start: "top top",
@@ -64,7 +66,7 @@ $(document).ready(function () {
       markers: true,
       scrub: 1,
     },
-    y: "100rem"
+    y: "50rem"
   })
 
 })

@@ -2,15 +2,12 @@ $(document).ready(function () {
 
   // smooth scroll
   const lenis = new Lenis()
-  lenis.on('scroll', (e) => {
-    // console.log(e)
-  })
+  lenis.on('scroll', (e) => { });
 
   function raf(time) {
     lenis.raf(time)
     requestAnimationFrame(raf)
   }
-
   requestAnimationFrame(raf);
 
   let tl = gsap.timeline();
@@ -43,13 +40,13 @@ $(document).ready(function () {
       });
     }
   });
-  tl.to(".visual-txt", {
+  tl.to(".motion-txt", {
     y: 0,
     stagger: .05,
     opacity: 1,
     ease: "quart.inOut",
     onComplete() {
-      $(".visual-txt").addClass("active");
+      $(".motion-txt").addClass("active");
     }
   })
   tl.to({}, {
@@ -58,15 +55,72 @@ $(document).ready(function () {
     }
   }, "+=.5");
 
-  gsap.to(".rotate-img", {
-    scrollTrigger: {
-      trigger: "html, body",
+  //about
+  $(".about-list").each(function(index) {
+    const totalLists = $(".about-list").length;
+    const isLastItem = index === totalLists - 1;
+    const triggerOptions = {
+      trigger: this,
       start: "top top",
-      end: "bottom bottom",
-      markers: true,
       scrub: 1,
-    },
-    y: "50rem"
-  })
+      pin: true,
+      pinSpacing: false,
+    };
+  
+    // 마지막요소
+    triggerOptions.end = isLastItem ? "bottom bottom" : "bottom top";
+    
+    // GSAP 애니메이션 적용
+    gsap.to(this, {
+      scrollTrigger: triggerOptions
+    });
+  });
 
+  // work
+  gsap.to (".work-wrap", {
+    width: "30vw",
+    height: "40vh",
+    borderRadius: "10rem",
+    scrollTrigger: {
+      trigger: ".work-section",
+      start: "top top",
+      end: "+=100%",
+      pin: true,
+      pinSpacing: true,
+      scrub: 1,
+      markers: true,
+      onUpdate(self) {
+        const progress = self.progress;
+        self.progress == 1 ? $(".work-tit").addClass("active") : $(".work-tit").removeClass("active")
+        //   console.log("sfsdfdsf");
+      }
+      // onComplete() {
+      //   $(".work-tit-wrap").addClass("active");
+      //   console.log("sfsdfdsf");
+      // }
+    }
+  });
+
+  // $(".work-list").each(function() {
+  //   gsap.to(this, {
+  //     y: 0,
+  //     scrollTrigger: {
+
+  //     }
+  //   })
+  // });
+
+
+  let workT = $(".work-con").offset().top;
+  $(window).on("scroll", function () {
+    let lastY = 0;
+    const scrollTop = $(window).scrollTop();
+    if (scrollTop > lastY) {
+      // 내려갈때
+    } else {
+      // 올라갈때
+    }
+
+    lastY = scrollTop;
+  });
 })

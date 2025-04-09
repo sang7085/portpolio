@@ -1,7 +1,7 @@
 const AboutMeComp = () => {
   return (
     <>
-      <div></div>
+      <section className="aboutme-section"></section>
     </>
   )
 }

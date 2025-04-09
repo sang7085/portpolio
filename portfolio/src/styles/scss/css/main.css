@@ -1,0 +1,82 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+section {
+  position: relative;
+  width: 100%;
+}
+
+header {
+  z-index: 999;
+  position: fixed;
+}
+
+.visual-section {
+  height: 100vh;
+  background-color: #F3F3EF;
+}
+.visual-section .visual-txt {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.visual-section .visual-txt.motion-txt-wrap {
+  overflow: hidden;
+}
+.visual-section .visual-txt.motion-txt-wrap .motion-txt {
+  font-size: 17vw;
+  font-family: "Boldonse", system-ui;
+  color: #11090d;
+  -webkit-text-stroke-color: #11090d;
+  -webkit-text-stroke-width: 1rem;
+}/*# sourceMappingURL=main.css.map */

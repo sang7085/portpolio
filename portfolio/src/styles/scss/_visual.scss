@@ -1,0 +1,25 @@
+
+.visual-section {
+  height: 100vh;
+  background-color: #F3F3EF;
+  .visual-txt {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    &.motion-txt-wrap {
+      overflow: hidden;
+      .motion-txt {
+        font-size: 17vw;
+        font-family: "Boldonse", system-ui;
+        color: #11090d;
+        -webkit-text-stroke-color: #11090d;
+        -webkit-text-stroke-width: 1rem;
+        // transform: translateY(150rem);
+        // opacity: 0;
+      }
+    }
+  }
+}

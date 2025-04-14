@@ -1,0 +1,91 @@
+.intro-sec {
+  z-index: 999;
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: #000;
+
+  .intro-area {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    .intro-img-wrap {
+      z-index: 1;
+      overflow: hidden;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6vw;
+      height: 6vw;
+      // border-radius: 30px;
+      .img-list {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          image-rendering: crisp-edges;
+          backface-visibility: hidden;
+        }
+      }
+
+      &:nth-child(1) {
+        top: calc(50% - 6vw - 1vw);
+        left: calc(50% - 6vw - 1vw);
+      }
+      &:nth-child(2) {
+        top: calc(50% - 6vw - 1vw);
+      }
+      &:nth-child(3) {
+        top: calc(50% - 6vw - 1vw);
+        left: calc(50% + 6vw + 1vw);
+      }
+      &:nth-child(4) {
+        left: calc(50% - 6vw - 1vw);
+      }
+      &:nth-child(5) {
+        z-index: 2;
+      }
+      &:nth-child(6) {
+        left: calc(50% + 6vw + 1vw);
+      }
+      &:nth-child(7) {
+        top: calc(50% + 6vw + 1vw);
+        left: calc(50% - 6vw - 1vw);
+      }
+      &:nth-child(8) {
+        top: calc(50% + 6vw + 1vw);
+      }
+      &:nth-child(9) {
+        top: calc(50% + 6vw + 1vw);
+        left: calc(50% + 6vw + 1vw);
+      }
+    }
+  }
+
+  .bg-noise {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.1;
+    background: url(../../assets/images/bg-noise.jpg) no-repeat 0 / cover;
+  }
+
+  .wide-circle {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #eee;
+  }
+  
+}

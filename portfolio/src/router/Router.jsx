@@ -1,28 +1,39 @@
-import { Routes, Route } from 'react-router-dom'
+  // AppRouter.jsx 또는 router.jsx
+  import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+  import HeaderComp from '../components/HeaderComp';
+  import IntroComp from '../components/IntroComp';
+  import MainComp from '../components/MainComp';
+  import FooterComp from '../components/FooterComp';
+  import { useState } from 'react';
 
-import HeaderComp from '../components/HeaderComp'
-import IntroComp from '../components/IntroComp'
-import MainComp from '../components/MainComp'
-import WorkComp from '../components/WorkComp'
-import FooterComp from '../components/FooterComp'
+  const MainLayout = () => {
+    return (
+      <>
+        <HeaderComp />
+        <MainComp />
+        <FooterComp />
+      </>
+    );
+  };
 
-const Router = () => {
-  return (
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <>
-            <HeaderComp />
-            <IntroComp />
-            <MainComp />
-            <WorkComp />
-            <FooterComp />
-          </>
-        }
-      />
-    </Routes>
-  )
-}
+  const router = createBrowserRouter([
+    {
+      path: '/',
+      element: <MainLayout />
+    }
+  ]);
 
-export default Router;
+  const AppRouter = () => {
+    const [introStatus, setIntroStatus] = useState(true);
+    return (
+      <>
+        {introStatus ? (
+          <IntroComp setIntroStatus={setIntroStatus} />
+        ) : (
+          <RouterProvider router={router} />
+        )}
+      </>
+    )
+  };
+
+  export default AppRouter;

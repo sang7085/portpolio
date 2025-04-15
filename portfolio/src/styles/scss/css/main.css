@@ -66,55 +66,17 @@ header {
 .intro-sec {
   z-index: 999;
   position: fixed;
-  right: 17px;
   width: 100%;
   height: 100vh;
   background: #000;
 }
-.intro-sec .logo-loading {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-.intro-sec .logo-loading .loading-txt {
-  position: relative;
-  font-size: 4vw;
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  color: transparent;
-  -webkit-text-stroke: 1px #eee;
-  overflow: hidden;
-}
-.intro-sec .logo-loading .loading-txt::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to top, #eee 50%, transparent 50%);
-  background-size: 100% 200%;
-  background-position: 0 100%;
-  -webkit-background-clip: text;
-  transition: background-position 2s ease;
-}
-.intro-sec .logo-loading .loading-txt.active::after {
-  background-position: 0 0;
-}
 .intro-sec .intro-area {
-  z-index: 1;
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
-  opacity: 0;
 }
 .intro-sec .intro-area .intro-img-wrap {
   z-index: 1;
@@ -122,8 +84,8 @@ header {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 150px;
-  height: 150px;
+  width: 6vw;
+  height: 6vw;
 }
 .intro-sec .intro-area .intro-img-wrap .img-list {
   position: absolute;
@@ -141,35 +103,35 @@ header {
   backface-visibility: hidden;
 }
 .intro-sec .intro-area .intro-img-wrap:nth-child(1) {
-  top: calc(50% - 150px - 40px);
-  left: calc(50% - 150px - 40px);
+  top: calc(50% - 6vw - 1vw);
+  left: calc(50% - 6vw - 1vw);
 }
 .intro-sec .intro-area .intro-img-wrap:nth-child(2) {
-  top: calc(50% - 150px - 40px);
+  top: calc(50% - 6vw - 1vw);
 }
 .intro-sec .intro-area .intro-img-wrap:nth-child(3) {
-  top: calc(50% - 150px - 40px);
-  left: calc(50% + 150px + 40px);
+  top: calc(50% - 6vw - 1vw);
+  left: calc(50% + 6vw + 1vw);
 }
 .intro-sec .intro-area .intro-img-wrap:nth-child(4) {
-  left: calc(50% - 150px - 40px);
+  left: calc(50% - 6vw - 1vw);
 }
 .intro-sec .intro-area .intro-img-wrap:nth-child(5) {
   z-index: 2;
 }
 .intro-sec .intro-area .intro-img-wrap:nth-child(6) {
-  left: calc(50% + 150px + 40px);
+  left: calc(50% + 6vw + 1vw);
 }
 .intro-sec .intro-area .intro-img-wrap:nth-child(7) {
-  top: calc(50% + 150px + 40px);
-  left: calc(50% - 150px - 40px);
+  top: calc(50% + 6vw + 1vw);
+  left: calc(50% - 6vw - 1vw);
 }
 .intro-sec .intro-area .intro-img-wrap:nth-child(8) {
-  top: calc(50% + 150px + 40px);
+  top: calc(50% + 6vw + 1vw);
 }
 .intro-sec .intro-area .intro-img-wrap:nth-child(9) {
-  top: calc(50% + 150px + 40px);
-  left: calc(50% + 150px + 40px);
+  top: calc(50% + 6vw + 1vw);
+  left: calc(50% + 6vw + 1vw);
 }
 .intro-sec .bg-noise {
   position: absolute;
@@ -181,8 +143,6 @@ header {
   background: url(../../assets/images/bg-noise.jpg) no-repeat 0/cover;
 }
 .intro-sec .wide-circle {
-  opacity: 0;
-  z-index: 0;
   position: absolute;
   width: 30px;
   height: 30px;
